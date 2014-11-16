@@ -1,4 +1,3 @@
-
 get '/' do
   erb :index
 end
@@ -9,6 +8,7 @@ get '/messages' do
 end
 
 get '/messages/new' do
+  @message = Message.new
   erb :'messages/new'
 end
 

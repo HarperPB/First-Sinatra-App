@@ -7,9 +7,14 @@ get '/messages' do
   @messages = Message.all
   erb :'messages/index'
 end
-binding.pry
+
 get '/messages/new' do
   erb :'messages/new'
+end
+
+get '/messages/:id' do
+  @message = Message.find params[:id]
+  erb :'messages/show'
 end
 
 post '/messages' do
@@ -18,7 +23,11 @@ post '/messages' do
     content: params[:content],
     author:  params[:author]
   )
-  binding.pry
-  @message.save
-  redirect '/messages'
+  if @message.save
+    redirect '/messages'
+  else
+    erb :'messages/new'
+  end
 end
+
+

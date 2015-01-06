@@ -1,7 +1,9 @@
-Sinatra
-=============
 
-Brought to you by Lighthouse Labs
+
+
+Note: This is my first Sinatra App and more of a testing grounds 
+
+
 
 ## Getting Started
 
